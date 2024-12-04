@@ -3,7 +3,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-r from-teal-500 via-green-500 to-blue-500 text-white py-16">
+    <footer className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white py-16">
       <div className="container mx-auto px-6 lg:px-24">
         {/* Footer Top: Logo and Social Media Links */}
         <div className="flex flex-col lg:flex-row justify-between items-center mb-8">

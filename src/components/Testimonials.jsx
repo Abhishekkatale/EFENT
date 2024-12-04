@@ -1,75 +1,120 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaRegClock } from 'react-icons/fa';
+import { FaStar } from 'react-icons/fa';
 
-const blogPosts = [
-  {
-    title: 'How to Plan a Successful Corporate Event',
-    date: 'January 15, 2024',
-    description: 'Corporate events require careful planning. Here are tips and strategies to ensure your event is impactful, from choosing a venue to engaging your guests.',
-    image: 'https://static.wixstatic.com/media/75a2e3_5e16a1888e784c29bed271c6846ca149~mv2.png/v1/fill/w_258,h_220,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Rectangle%2040127-2.png',
-  },
-  {
-    title: 'Top Trends in Event Management for 2024',
-    date: 'February 10, 2024',
-    description: 'Stay ahead in the industry by exploring the top event management trends of 2024, including virtual experiences, sustainability, and hybrid events.',
-    image: 'https://static.wixstatic.com/media/75a2e3_f88b9c1843f84d42b8b08fb9142666a8~mv2.png/v1/fill/w_259,h_220,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/75a2e3_f88b9c1843f84d42b8b08fb9142666a8~mv2.png',
-  },
-  {
-    title: 'How to Choose the Perfect Venue for Your Event',
-    date: 'March 8, 2024',
-    description: 'Choosing the right venue is crucial for any event. We break down the factors to consider when selecting a venue that matches your event’s goals.',
-    image: 'https://static.wixstatic.com/media/75a2e3_a47034fbdfc342aa959d5db214902b92~mv2.jpg/v1/fill/w_713,h_483,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/InShot_20231219_102543127.jpg',
-  },
-];
-
-const BlogSection = () => {
+const TestimonialSection = () => {
   return (
-    <section className="py-20 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 text-white">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.h2 
-          className="text-5xl font-extrabold text-center mb-16 text-transparent bg-clip-text bg-gradient-to-r from-[#6CD123] to-[#B5FF4D]"
+    <section id="testimonials" className="py-16 text-center relative overflow-hidden">
+      {/* Decorative Element */}
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 "></div>
+      <div className="container mx-auto px-6 md:px-12 py-16 relative z-10">
+        {/* Heading */}
+        <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FF6347] mb-12"
         >
-          Latest Insights from EFENT
+          See What Our Customers Say About Us
         </motion.h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
-          {blogPosts.map((post, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-gradient-to-r from-teal-500 via-green-500 to-blue-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group"
-            >
-              <img 
-                src={post.image} 
-                alt={post.title} 
-                className="w-full h-56 object-cover group-hover:scale-105 transition-all duration-300"
+        {/* Testimonial Cards Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 text-left"
+        >
+          {/* Testimonial 1 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-gradient-to-r from-teal-500 via-green-500 to-blue-500 p-8 rounded-xl shadow-xl hover:shadow-[0px_0px_30px_20px_rgba(108,209,35,0.6)] transition-shadow duration-500"
+          >
+            <div className="flex items-center mb-6">
+              <img
+                src="https://randomuser.me/api/portraits/men/1.jpg"
+                alt="Customer"
+                className="w-16 h-16 rounded-full border-4 border-[#FFD700] mr-4"
               />
-              <div className="p-6">
-                <p className="flex items-center text-[#6CD123] text-sm mb-3">
-                  <FaRegClock className="mr-2" />
-                  {post.date}
-                </p>
-                <h3 className="text-2xl font-semibold text-[#FFDB58] mb-4">{post.title}</h3>
-                <p className="text-lg text-[#E0E0E0] mb-6">{post.description}</p>
-                <a
-                  href="/blog"
-                  className="inline-block text-[#6CD123] font-semibold border-b-2 border-[#6CD123] hover:text-[#FFD700] transition duration-300"
-                >
-                  Read More
-                </a>
+              <div>
+                <h3 className="text-2xl font-bold text-white">John Doe</h3>
+                <p className="text-sm text-[#FFD700]">Event Organizer</p>
               </div>
-            </motion.div>
-          ))}
-        </div>
+            </div>
+            <p className="text-lg text-[#CCCCCC] mb-4">
+              "EFENT made our wedding day truly special! The attention to detail and seamless coordination
+              ensured everything went off without a hitch. We couldn’t be more thrilled with the outcome!"
+            </p>
+            <div className="flex justify-start items-center">
+              {[...Array(5)].map((_, index) => (
+                <FaStar key={index} className="text-[#FFD700] text-xl" />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Testimonial 2 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="bg-gradient-to-r from-teal-500 via-green-500 to-blue-500 p-8 rounded-xl shadow-xl hover:shadow-[0px_0px_30px_20px_rgba(108,209,35,0.6)] transition-shadow duration-500"
+          >
+            <div className="flex items-center mb-6">
+              <img
+                src="https://randomuser.me/api/portraits/women/2.jpg"
+                alt="Customer"
+                className="w-16 h-16 rounded-full border-4 border-[#FFD700] mr-4"
+              />
+              <div>
+                <h3 className="text-2xl font-bold text-white">Sarah Smith</h3>
+                <p className="text-sm text-[#FFD700]">Corporate Client</p>
+              </div>
+            </div>
+            <p className="text-lg text-[#CCCCCC] mb-4">
+              "Our corporate event was elevated to the next level thanks to EFENT! Their professionalism
+              and creativity helped us organize a flawless experience for our team."
+            </p>
+            <div className="flex justify-start items-center">
+              {[...Array(5)].map((_, index) => (
+                <FaStar key={index} className="text-[#FFD700] text-xl" />
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Testimonial 3 */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="bg-gradient-to-r from-teal-500 via-green-500 to-blue-500 p-8 rounded-xl shadow-xl hover:shadow-[0px_0px_30px_20px_rgba(108,209,35,0.6)] transition-shadow duration-500"
+          >
+            <div className="flex items-center mb-6">
+              <img
+                src="https://randomuser.me/api/portraits/men/3.jpg"
+                alt="Customer"
+                className="w-16 h-16 rounded-full border-4 border-[#FFD700] mr-4"
+              />
+              <div>
+                <h3 className="text-2xl font-bold text-white">Michael Lee</h3>
+                <p className="text-sm text-[#FFD700]">Private Party Client</p>
+              </div>
+            </div>
+            <p className="text-lg text-[#CCCCCC] mb-4">
+              "EFENT transformed my birthday party into something unforgettable. They went above and beyond
+              to ensure the event was a success. Highly recommend!"
+            </p>
+            <div className="flex justify-start items-center">
+              {[...Array(5)].map((_, index) => (
+                <FaStar key={index} className="text-[#FFD700] text-xl" />
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
-export default BlogSection;
+export default TestimonialSection;
